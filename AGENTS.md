@@ -28,7 +28,7 @@ Each package also has a `README.md` with API docs and a `## Changelog` at the bo
 
 ### When to plan
 
-Any task that changes package code requires a plan. Simple checks, info gathering, and discussions do not.
+Any task that requires significant code changes requires a plan. Simple checks, info gathering, and discussions do not. If it's not clear (small code changes), ask the user if he wants to plan first.
 
 ### Creating a plan
 
