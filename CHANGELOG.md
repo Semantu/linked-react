@@ -1,6 +1,8 @@
 # Changelog
 
-### 1.0.0 (from LINCD.js)
+## 1.0.0
+
+### Major Changes
 
 Initial extraction from the LINCD monolith. Moves React-specific linked component wrappers into a standalone package.
 
