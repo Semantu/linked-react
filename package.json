@@ -1,7 +1,7 @@
 {
   "name": "@_linked/react",
-  "version": "0.0.0",
-  "license": "MPL-2.0",
+  "version": "0.0.1",
+  "license": "MIT",
   "description": "React bindings for @_linked/core",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
