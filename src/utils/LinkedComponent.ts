@@ -11,6 +11,7 @@ import {
   ToQueryResultSet,
 } from '@_linked/core/queries/SelectQuery';
 import {Shape} from '@_linked/core/shapes/Shape';
+import {getQueryDispatch} from '@_linked/core/queries/queryDispatch';
 
 import React, {createElement, useCallback, useEffect, useState} from 'react';
 import {LinkedStorage} from '@_linked/core/utils/LinkedStorage';
@@ -176,14 +177,7 @@ export function createLinkedComponentFn(
               }
 
               setLoadingData(sourceId || requestQuery.subject?.id);
-              const parser =
-                (shapeClass as typeof Shape).queryParser || Shape.queryParser;
-              if (!parser) {
-                throw new Error(
-                  `No query parser configured for ${shapeClass?.name || 'shape'}.`,
-                );
-              }
-              parser.selectQuery(requestQuery).then((result) => {
+              getQueryDispatch().selectQuery(requestQuery.build()).then((result) => {
                 setQueryResult(result);
                 setLoadingData(null);
               });
@@ -364,14 +358,7 @@ export function createLinkedSetComponentFn(
               requestQuery.setOffset(offset);
             }
 
-            const parser =
-              (shapeClass as typeof Shape).queryParser || Shape.queryParser;
-            if (!parser) {
-              throw new Error(
-                `No query parser configured for ${shapeClass?.name || 'shape'}.`,
-              );
-            }
-            parser.selectQuery(requestQuery).then((result) => {
+            getQueryDispatch().selectQuery(requestQuery.build()).then((result) => {
               setQueryResult(result);
             });
           }
